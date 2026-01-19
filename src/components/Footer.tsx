@@ -54,6 +54,16 @@ export default function Footer() {
           </div>
 
           <div className="pt-8 border-t border-gray-200">
+            <div className="flex flex-col items-center gap-3 mb-4">
+              <a
+                href="/privacy-policy.html"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-primary hover:text-secondary transition-colors font-cairo font-semibold"
+              >
+                سياسة الخصوصية
+              </a>
+            </div>
             <p className="text-gray-600 font-cairo">
               © 2026 NEXTBIT. جميع الحقوق محفوظة
             </p>
