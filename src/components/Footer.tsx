@@ -3,7 +3,7 @@ import { Heart, Code } from 'lucide-react';
 
 export default function Footer() {
   return (
-    <footer className="relative bg-gradient-to-b from-dark-800 to-dark-900 border-t border-white/10 overflow-hidden">
+    <footer className="relative bg-gradient-to-b from-light-100 to-white border-t border-gray-200 overflow-hidden">
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-primary/5 via-transparent to-transparent"></div>
 
       <div className="container mx-auto px-4 py-16 relative z-10">
@@ -26,26 +26,26 @@ export default function Footer() {
             />
           </motion.div>
 
-          <h3 className="text-3xl font-black text-white mb-3 font-cairo">
+          <h3 className="text-3xl font-black text-gray-900 mb-3 font-cairo">
             <span className="bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
               NEXTBIT
             </span>
           </h3>
 
-          <p className="text-xl text-gray-300 mb-6 font-cairo">نظام التوصيل الذكي</p>
+          <p className="text-xl text-gray-700 mb-6 font-cairo">نظام التوصيل الذكي</p>
 
           <div className="flex flex-col items-center gap-4 mb-8">
-            <p className="text-gray-400 font-cairo text-lg">
+            <p className="text-gray-600 font-cairo text-lg">
               الريادة في التوصيل الذكي
             </p>
-            <div className="flex items-center gap-2 text-gray-500">
+            <div className="flex items-center gap-2 text-gray-600">
               <span className="font-cairo">بُني بتقنيات حديثة لمستقبل أفضل</span>
             </div>
           </div>
 
           <div className="flex items-center justify-center gap-2 mb-8">
             <div className="h-px w-20 bg-gradient-to-r from-transparent to-primary/50"></div>
-            <div className="flex items-center gap-2 text-gray-500">
+            <div className="flex items-center gap-2 text-gray-600">
               <Code className="w-4 h-4" />
               <span className="text-sm">Built with</span>
               <Heart className="w-4 h-4 text-red-500 animate-pulse" />
@@ -53,8 +53,8 @@ export default function Footer() {
             <div className="h-px w-20 bg-gradient-to-l from-transparent to-primary/50"></div>
           </div>
 
-          <div className="pt-8 border-t border-white/10">
-            <p className="text-gray-500 font-cairo">
+          <div className="pt-8 border-t border-gray-200">
+            <p className="text-gray-600 font-cairo">
               © 2026 NEXTBIT. جميع الحقوق محفوظة
             </p>
           </div>
@@ -73,7 +73,7 @@ export default function Footer() {
         </motion.div>
       </div>
 
-      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-dark-900 to-transparent"></div>
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white to-transparent"></div>
     </footer>
   );
 }

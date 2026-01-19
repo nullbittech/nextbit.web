@@ -62,7 +62,7 @@ export default function Stats() {
   ];
 
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden">
+    <section className="py-24 bg-light-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-0 left-0 w-full h-full bg-gradient-to-b from-dark-800/50 to-transparent"></div>
         <div className="absolute bottom-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-primary/50 to-transparent"></div>
@@ -76,12 +76,12 @@ export default function Stats() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 font-cairo">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 font-cairo">
             <span className="bg-gradient-to-r from-accent via-secondary to-primary bg-clip-text text-transparent">
               إنجازاتنا بالأرقام
             </span>
           </h2>
-          <p className="text-xl text-gray-400 font-cairo">أرقام تتحدث عن نفسها</p>
+          <p className="text-xl text-gray-600 font-cairo">أرقام تتحدث عن نفسها</p>
         </motion.div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 max-w-7xl mx-auto">
@@ -96,14 +96,14 @@ export default function Stats() {
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${stat.gradient} opacity-10 blur-2xl group-hover:opacity-20 transition-opacity duration-500`}></div>
 
-              <div className="relative p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:border-white/20 transition-all duration-500 text-center">
+              <div className="relative p-8 bg-white backdrop-blur-xl border border-gray-200 rounded-3xl hover:border-gray-300 transition-all duration-500 text-center">
                 <motion.div
                   whileHover={{ scale: 1.1, rotate: 360 }}
                   transition={{ duration: 0.5 }}
                   className="flex justify-center mb-6"
                 >
                   <div className={`p-5 bg-gradient-to-br ${stat.gradient} rounded-2xl shadow-lg`}>
-                    <stat.icon className="w-10 h-10 text-white" />
+                    <stat.icon className="w-10 h-10 text-gray-900" />
                   </div>
                 </motion.div>
 
@@ -111,7 +111,7 @@ export default function Stats() {
                   <Counter value={stat.value} suffix={stat.suffix} />
                 </div>
 
-                <p className="text-xl text-gray-300 font-bold font-cairo">{stat.label}</p>
+                <p className="text-xl text-gray-700 font-bold font-cairo">{stat.label}</p>
 
                 <div className={`mt-6 h-1 w-20 mx-auto bg-gradient-to-r ${stat.gradient} rounded-full`}></div>
               </div>
@@ -126,7 +126,7 @@ export default function Stats() {
           transition={{ duration: 0.8, delay: 0.5 }}
           className="mt-16 text-center"
         >
-          <p className="text-2xl text-gray-300 font-cairo">
+          <p className="text-2xl text-gray-700 font-cairo">
             أرقام تتزايد يومياً مع نمو منصتنا
           </p>
         </motion.div>

@@ -34,7 +34,7 @@ export default function Workflow() {
   ];
 
   return (
-    <section className="py-24 bg-dark-900 relative overflow-hidden">
+    <section className="py-24 bg-light-100 relative overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute top-1/2 left-1/4 w-64 h-64 bg-primary/10 rounded-full blur-3xl"></div>
         <div className="absolute top-1/3 right-1/4 w-96 h-96 bg-secondary/10 rounded-full blur-3xl"></div>
@@ -48,12 +48,12 @@ export default function Workflow() {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-4 font-cairo">
+          <h2 className="text-5xl md:text-6xl font-black text-gray-900 mb-4 font-cairo">
             <span className="bg-gradient-to-r from-accent via-primary to-secondary bg-clip-text text-transparent">
               كيف يعمل النظام
             </span>
           </h2>
-          <p className="text-xl text-gray-400 font-cairo">رحلة الطلب من البداية للنهاية</p>
+          <p className="text-xl text-gray-600 font-cairo">رحلة الطلب من البداية للنهاية</p>
         </motion.div>
 
         <div className="max-w-6xl mx-auto">
@@ -70,10 +70,10 @@ export default function Workflow() {
                 <div className="relative group">
                   <div className={`absolute inset-0 bg-gradient-to-br ${step.gradient} opacity-20 blur-2xl group-hover:opacity-30 transition-opacity duration-500`}></div>
 
-                  <div className="relative p-8 bg-white/5 backdrop-blur-xl border border-white/10 rounded-3xl hover:border-white/20 transition-all duration-500 text-center">
+                  <div className="relative p-8 bg-white backdrop-blur-xl border border-gray-200 rounded-3xl hover:border-gray-300 transition-all duration-500 text-center">
                     <div className="flex justify-center mb-6">
                       <div className={`p-6 bg-gradient-to-br ${step.gradient} rounded-2xl group-hover:scale-110 transition-transform duration-300 shadow-lg`}>
-                        <step.icon className="w-10 h-10 text-white" />
+                        <step.icon className="w-10 h-10 text-gray-900" />
                       </div>
                     </div>
 
@@ -81,8 +81,8 @@ export default function Workflow() {
                       {index + 1}
                     </div>
 
-                    <h3 className="text-2xl font-bold text-white mb-2 font-cairo">{step.title}</h3>
-                    <p className="text-gray-400 font-cairo">{step.description}</p>
+                    <h3 className="text-2xl font-bold text-gray-900 mb-2 font-cairo">{step.title}</h3>
+                    <p className="text-gray-600 font-cairo">{step.description}</p>
                   </div>
                 </div>
 
@@ -108,9 +108,9 @@ export default function Workflow() {
             transition={{ duration: 0.8, delay: 0.8 }}
             className="mt-12 text-center"
           >
-            <div className="inline-flex items-center gap-4 p-6 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-xl border border-white/10 rounded-2xl">
+            <div className="inline-flex items-center gap-4 p-6 bg-gradient-to-r from-primary/10 via-secondary/10 to-accent/10 backdrop-blur-xl border border-gray-200 rounded-2xl">
               <Bell className="w-8 h-8 text-accent animate-pulse" />
-              <p className="text-lg text-white font-cairo">
+              <p className="text-lg text-gray-900 font-cairo">
                 جميع الأطراف تحصل على تحديثات فورية في كل خطوة
               </p>
             </div>
