@@ -1,6 +1,36 @@
 import { motion } from 'framer-motion';
 import { LayoutDashboard, Truck, Package, Check } from 'lucide-react';
 
+const PlatformContent = ({ platform }: { platform: any }) => (
+  <>
+    <div className="flex items-center gap-4 mb-6">
+      <div className={`p-4 bg-${platform.color}/20 rounded-2xl group-hover:scale-110 transition-transform duration-300`}>
+        <platform.icon className={`w-12 h-12 text-${platform.color}`} />
+      </div>
+      <div>
+        <h3 className="text-2xl font-bold text-gray-900 font-cairo">{platform.title}</h3>
+      </div>
+    </div>
+
+    <p className="text-gray-600 mb-6 font-cairo text-lg">{platform.description}</p>
+
+    <div className="space-y-4 flex-grow">
+      {platform.features.map((feature: string) => (
+        <div key={feature} className="flex items-start gap-3 group/item">
+          <div className={`p-1 bg-${platform.color}/20 rounded-full mt-1 group-hover/item:scale-110 transition-transform`}>
+            <Check className={`w-4 h-4 text-${platform.color}`} />
+          </div>
+          <span className="text-gray-700 font-cairo">{feature}</span>
+        </div>
+      ))}
+    </div>
+
+    <div className="mt-8 pt-6 border-t border-gray-200">
+      <div className={`h-1 w-full bg-gradient-to-r from-${platform.color} to-transparent rounded-full`}></div>
+    </div>
+  </>
+);
+
 export default function Platforms() {
   const platforms = [
     {
@@ -41,6 +71,7 @@ export default function Platforms() {
         'تقارير مالية',
         'إشعارات فورية',
       ],
+      link: 'https://delivery-system3.pages.dev/login',
     },
   ];
 
@@ -76,32 +107,21 @@ export default function Platforms() {
             >
               <div className={`absolute inset-0 bg-gradient-to-br ${platform.gradient} blur-2xl group-hover:blur-3xl transition-all duration-500`}></div>
 
-              <div className="relative h-full p-8 bg-light-100 backdrop-blur-xl border border-gray-200 rounded-3xl hover:border-gray-300 transition-all duration-500 flex flex-col">
-                <div className="flex items-center gap-4 mb-6">
-                  <div className={`p-4 bg-${platform.color}/20 rounded-2xl group-hover:scale-110 transition-transform duration-300`}>
-                    <platform.icon className={`w-12 h-12 text-${platform.color}`} />
+              <div className="relative h-full flex flex-col">
+                {platform.link ? (
+                  <a
+                    href={platform.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="relative h-full p-8 bg-light-100 backdrop-blur-xl border border-gray-200 rounded-3xl hover:border-primary/50 hover:shadow-xl transition-all duration-500 flex flex-col cursor-pointer group/card"
+                  >
+                    <PlatformContent platform={platform} />
+                  </a>
+                ) : (
+                  <div className="relative h-full p-8 bg-light-100 backdrop-blur-xl border border-gray-200 rounded-3xl transition-all duration-500 flex flex-col">
+                    <PlatformContent platform={platform} />
                   </div>
-                  <div>
-                    <h3 className="text-2xl font-bold text-gray-900 font-cairo">{platform.title}</h3>
-                  </div>
-                </div>
-
-                <p className="text-gray-600 mb-6 font-cairo text-lg">{platform.description}</p>
-
-                <div className="space-y-4 flex-grow">
-                  {platform.features.map((feature) => (
-                    <div key={feature} className="flex items-start gap-3 group/item">
-                      <div className={`p-1 bg-${platform.color}/20 rounded-full mt-1 group-hover/item:scale-110 transition-transform`}>
-                        <Check className={`w-4 h-4 text-${platform.color}`} />
-                      </div>
-                      <span className="text-gray-700 font-cairo">{feature}</span>
-                    </div>
-                  ))}
-                </div>
-
-                <div className="mt-8 pt-6 border-t border-gray-200">
-                  <div className={`h-1 w-full bg-gradient-to-r from-${platform.color} to-transparent rounded-full`}></div>
-                </div>
+                )}
               </div>
             </motion.div>
           ))}

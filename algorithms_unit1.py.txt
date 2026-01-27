@@ -1,0 +1,300 @@
+# ============================================
+# Algorithms – Unit 1
+# Student: Mohammad Hasan Alzaraa
+# ID: AF1025
+# University: Isra University
+# ============================================
+
+import math
+import random
+import time
+
+# ---------- A. Sequential Algorithms ----------
+
+def sum_two_numbers(a, b):
+    return a + b
+
+def fahrenheit_to_celsius(f):
+    return (f - 32) * 5 / 9
+
+def volume_of_cone(diameter, height):
+    radius = diameter / 2
+    return (1/3) * math.pi * radius**2 * height
+
+def room_volume(length, breadth, height):
+    return length * breadth * height
+
+def average_speed(distance, time_taken):
+    return distance / time_taken
+
+def volume_of_cube(side):
+    return side ** 3
+
+def volume_of_pyramid(length, breadth, height):
+    base_area = length * breadth
+    return (1/3) * base_area * height
+
+# ---------- B. Basic Repetition Algorithms ----------
+
+def deliver_newspapers(count):
+    delivered = 0
+    while count > 0:
+        count -= 1
+        delivered += 1
+    print("Total newspapers delivered:", delivered)
+
+def paint_wall():
+    painted = False
+    passes = 0
+    while not painted:
+        passes += 1
+        print("Painting pass", passes)
+        if passes == 3:
+            painted = True
+
+def complete_questions(total):
+    q = 1
+    while q <= total:
+        print("Answered question", q)
+        q += 1
+
+def print_one_to_ten():
+    i = 1
+    while i <= 10:
+        print(i)
+        i += 1
+
+def sum_first_n(n):
+    total = 0
+    i = 1
+    while i <= n:
+        total += i
+        i += 1
+    return total
+
+def ask_more_than_ten():
+    num = int(input("Enter number greater than 10: "))
+    while num <= 10:
+        num = int(input("Try again: "))
+    print("Accepted")
+
+def ask_less_than_five():
+    num = int(input("Enter number less than 5: "))
+    while num >= 5:
+        num = int(input("Try again: "))
+    print("Accepted")
+
+def password_check():
+    correct = "1234"
+    user = input("Enter password: ")
+    while user != correct:
+        user = input("Wrong password, try again: ")
+    print("Password accepted")
+
+def guess_square_area(side):
+    correct_area = side * side
+    guess = int(input("Guess the area: "))
+    while guess != correct_area:
+        print("Incorrect, try again")
+        guess = int(input("Guess the area: "))
+    print("Correct!")
+
+def nine_times_table():
+    for i in range(1, 13):
+        print(i, "x 9 =", i * 9)
+
+def thirteen_times_table():
+    for i in range(1, 11):
+        print(i, "x 13 =", i * 13)
+
+def repeat_message():
+    for _ in range(4):
+        print("Welcome to Algorithms")
+
+def petrol_price_table(price):
+    for liters in range(1, 26):
+        print(liters, "liters =", liters * price)
+
+def table_of_squares():
+    for i in range(2, 21):
+        print(i, "square =", i * i)
+
+def areas_of_circles():
+    for r in range(10, 21):
+        print("Radius:", r, "Area:", math.pi * r * r)
+
+def increment_until_fifty(n):
+    if n >= 50:
+        print("Already 50 or more")
+    else:
+        while n < 50:
+            n += 1
+            print(n)
+
+# ---------- C. Selection Algorithms ----------
+
+def positive_or_negative(n):
+    if n >= 0:
+        print("Positive")
+    else:
+        print("Negative")
+
+def pass_or_fail(grade):
+    if grade >= 50:
+        print("Passed")
+    else:
+        print("Failed")
+
+def even_or_odd(n):
+    if n % 2 == 0:
+        print("Even")
+    else:
+        print("Odd")
+
+def voting_eligibility(age):
+    if age >= 18:
+        print("Eligible to vote")
+    else:
+        print("Not eligible")
+
+def admission_decision(age, score):
+    if age >= 18 and score >= 70:
+        print("Admitted")
+    else:
+        print("Not admitted")
+
+def tax_calculator(income):
+    if income < 10000:
+        tax = 0
+        bracket = "No tax"
+    elif income <= 30000:
+        tax = income * 0.1
+        bracket = "10% bracket"
+    else:
+        tax = income * 0.2
+        bracket = "20% bracket"
+    print("Tax:", tax, "-", bracket)
+
+# ---------- D. Combined Algorithms ----------
+
+def largest_in_stream(numbers):
+    largest = numbers[0]
+    for n in numbers:
+        if n > largest:
+            largest = n
+    return largest
+
+def smallest_in_stream(numbers):
+    smallest = numbers[0]
+    for n in numbers:
+        if n < smallest:
+            smallest = n
+    return smallest
+
+def average_of_stream(numbers):
+    return sum(numbers) / len(numbers)
+
+def filter_applicants(applicants):
+    result = []
+    for a in applicants:
+        if not a["smokes"] and not a["drinks"]:
+            result.append(a)
+    return result
+
+# ---------- E. Array Algorithm ----------
+
+def find_smallest_number(T):
+    smallest = T[0]
+    for i in range(1, len(T)):
+        if T[i] < smallest:
+            smallest = T[i]
+    return smallest
+
+# ---------- F. Tracing and Efficiency ----------
+
+def actor_action(sentence):
+    words = sentence.split()
+    actor = words[1]
+    action = words[2]
+    print("Actor:", actor)
+    print("Action:", action)
+
+def insertion_sort(arr):
+    for i in range(1, len(arr)):
+        key = arr[i]
+        j = i - 1
+        while j >= 0 and key < arr[j]:
+            arr[j + 1] = arr[j]
+            j -= 1
+        arr[j + 1] = key
+
+def merge_sort(arr):
+    if len(arr) > 1:
+        mid = len(arr) // 2
+        L = arr[:mid]
+        R = arr[mid:]
+        merge_sort(L)
+        merge_sort(R)
+        i = j = k = 0
+        while i < len(L) and j < len(R):
+            if L[i] < R[j]:
+                arr[k] = L[i]
+                i += 1
+            else:
+                arr[k] = R[j]
+                j += 1
+            k += 1
+        while i < len(L):
+            arr[k] = L[i]
+            i += 1
+            k += 1
+        while j < len(R):
+            arr[k] = R[j]
+            j += 1
+            k += 1
+
+
+
+__________________________________________________________________________________________________
+
+plementation of Introductory Algorithms – Unit 1
+
+Student Name: Mohammad Hasan Alzaraa
+Student ID: AF1025
+University: Isra University
+Course: Algorithms – Unit 1
+
+1. Introduction
+
+This project implements and analyzes introductory algorithms from Algorithms – Unit 1.
+The implemented sections are B, D, and F.
+All algorithms were written in Python as console-based programs.
+
+2. Project Structure
+
+Each algorithm is implemented as a separate function.
+Loops and conditional statements were used exactly as described in the slides.
+
+3. Algorithm Analysis Summary
+
+Section B – Repetition Algorithms
+These algorithms repeat actions using loops such as while and for.
+Time complexity is generally O(n), and space complexity is constant.
+
+Section D – Combined Algorithms
+These algorithms combine loops with conditions to process data streams.
+Time complexity is O(n), and space complexity is constant or linear.
+
+Section F – Efficiency Algorithms
+Insertion sort has time complexity O(n²), while merge sort has O(n log n).
+Merge sort performs better on large input sizes.
+
+4. Reflection
+
+Basic repetition algorithms were easy to implement.
+Sorting algorithms were more challenging, especially merge sort due to recursion.
+
+5. Conclusion
+
+This project improved understanding of basic algorithm concepts and efficiency analysis.
+The results confirm the importance of selecting efficient algorithms for large data.

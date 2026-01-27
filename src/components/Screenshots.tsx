@@ -42,6 +42,7 @@ export default function Screenshots() {
       category: 'admin',
       device: 'desktop',
       gradient: 'from-primary to-blue-600',
+
       features: ['تتبع GPS', 'المسارات', 'التحديثات الحية'],
     },
     {

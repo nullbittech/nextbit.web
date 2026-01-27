@@ -22,6 +22,7 @@ export default function Hero() {
               <div className="absolute inset-0 bg-white rounded-full blur-2xl opacity-80"></div>
               <div className="relative bg-white rounded-full p-6 shadow-xl">
                 <img
+
                   src="/logo.png"
                   alt="NEXTBIT Logo"
                   className="h-20 w-auto"
@@ -95,7 +96,12 @@ export default function Hero() {
               </div>
             </div>
 
-            <div className="group p-6 bg-white backdrop-blur-xl border border-gray-200 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300">
+            <a
+              href="https://delivery-system3.pages.dev/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="group p-6 bg-white backdrop-blur-xl border border-gray-200 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300 block cursor-pointer"
+            >
               <div className="flex flex-col items-center gap-4">
                 <div className="p-4 bg-secondary/20 rounded-2xl group-hover:bg-secondary/30 transition-colors">
                   <Package className="w-12 h-12 text-secondary" />
@@ -103,7 +109,7 @@ export default function Hero() {
                 <h3 className="text-xl font-bold text-gray-900 font-cairo">تطبيق الموردين</h3>
                 <p className="text-gray-600 text-sm font-cairo">إنشاء وتتبع بسيط</p>
               </div>
-            </div>
+            </a>
 
             <div className="group p-6 bg-white backdrop-blur-xl border border-gray-200 rounded-2xl hover:shadow-lg hover:scale-105 transition-all duration-300">
               <div className="flex flex-col items-center gap-4">
